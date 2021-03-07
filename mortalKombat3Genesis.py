@@ -37,10 +37,7 @@ if __name__ == '__main__':
     env = SubprocVecEnv([make_env(env_id, i) for i in range(num_cpu)])
 
 
-    #model = PPO2(CnnPolicy, env, verbose=1,)
     model = PPO2.load('MortalKombat3-2milTimesteps.zip', env)
-    #model.learn(100000)
-    #model.save("paxman15.1mil")
 
     obs = env.reset()
     while True:
